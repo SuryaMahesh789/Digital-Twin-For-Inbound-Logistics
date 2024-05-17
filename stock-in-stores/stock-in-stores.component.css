@@ -1,0 +1,56 @@
+:host{
+    width:640px;
+    height:500px;
+    overflow: auto;
+}
+
+p{
+    text-align: center;
+    
+    font-size: large;
+    font-weight:bold;
+
+    margin:0.5rem 0;
+}
+
+table{
+    margin:1rem auto;
+    font-weight:400;
+
+    border: 1px solid red;
+
+    overflow-y: auto;
+
+}
+
+thead,tbody{
+    padding: 10px;
+}
+
+
+thead>tr>td{
+        padding-right: 1rem;
+        text-align: center;
+        font-size:medium;
+        font-weight: bold;
+}
+
+
+td{
+    padding-right: 1rem;    
+    height:30px;
+}
+
+tr{
+    border:2px solid greenyellow;
+
+}
+
+.value{
+    text-align: center;
+}
+
+#bar{
+    width: 300px; 
+}
+

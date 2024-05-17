@@ -1,0 +1,100 @@
+ 
+
+:host {
+    display: grid;
+    padding:5px;
+    grid-template-columns:50% 50%;
+    grid-template-rows:10% 90%;
+    gap:1.5rem 1rem;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+
+    & > * {
+        border-width: 1px;
+    }
+}
+
+
+p{
+
+    grid-column:1/3;
+    grid-row:1/3;
+
+    grid-row-end:span 1;
+    grid-column-end:span 2;
+
+    text-align: center;
+
+    font-size:30px;
+    font-weight:bolder;
+    font-family: sans-serif;
+
+    color:black;
+}
+
+#docks{
+
+    grid-column:1/3;
+    grid-row:2/3;
+
+    grid-row-end:span 1;
+    grid-column-end:span 1;
+
+    width:calc(640px);
+    height:calc(480px);
+
+}
+
+#data
+{
+    grid-column:2/3;
+    grid-row:2/3;
+
+    grid-row-end:span 1;    
+    grid-column-end:span 1;
+
+    width:calc(640px);
+    height:calc(480px);
+
+        
+    overflow-y: auto; 
+
+   
+
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+    
+      /* Apply styles to the table header */
+      th {
+        background-color: lightblue;
+        color:black;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #000;
+      }
+    
+      /* Apply styles to the first row of the table body */
+      .header {
+        background-color: black;
+        color: white;
+
+        border: 1px solid white;
+      }
+    
+      /* Apply styles to the remaining rows of the table body */
+      tbody tr:not(:first-child) {
+        background-color: white;
+      }
+    
+      /* Apply styles to all table cells */
+      td {
+        padding: 10px;
+        border: 1px solid #000;
+      }
+
+}

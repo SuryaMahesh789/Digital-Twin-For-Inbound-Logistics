@@ -1,0 +1,74 @@
+<ng-container [ngSwitch]="selected_store" class="store-container">
+
+    <p>Docks &#64; {{selected_store_name}} </p>
+
+    <div id="docks">
+        <ng-container *ngSwitchCase="101" class="store">
+            <app-p1-vehicle-stores></app-p1-vehicle-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="102" class="store">
+            <app-p1-engine-stores></app-p1-engine-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="103" class="store">
+            <app-p1-plastic-stores></app-p1-plastic-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="201" class="store">
+            <app-p2-vehicle-and-engine-stores></app-p2-vehicle-and-engine-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="202" class="store">
+            <app-p2-vehicle-stores></app-p2-vehicle-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="203" class="store">
+            <app-p2-ckd-stores></app-p2-ckd-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="204" class="store">
+            <app-p2-ckd-stores></app-p2-ckd-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="205" class="store">
+            <app-p2-frame-and-paint-stores></app-p2-frame-and-paint-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="206" class="store">
+            <app-p2-vehicle-and-engine-stores></app-p2-vehicle-and-engine-stores>
+        </ng-container>
+        <ng-container *ngSwitchCase="301" class="store">
+            <app-p3-stores></app-p3-stores>
+        </ng-container>
+    </div>
+
+    <div id="data">
+
+        <table>
+            <thead class="head">
+                <th colspan="6">Dock Dashboard</th>
+                
+                <tr class="header">
+                <td>Dock</td>
+                <td>Vehicle Number</td>
+                <td>Supplier Name</td>
+                <td>Vehicle Entry No</td>
+                <td>Dock Entry Time</td>
+                <td>Duration at Dock</td>
+                </tr>
+            </thead>
+        
+            <tbody>
+                @for (item of items;track items){
+                    <tr>
+                        <td>{{item.dock}}</td>
+                        <td>{{item.vehicle_no}}</td>
+                        <td>{{item.supplier_name}}</td>
+                        <td>{{item.vehicle_entry_no}}</td>
+                        <td>{{item.dock_entry_time}}</td>
+                        <td>{{item.duration_at_dock}}</td>
+                    </tr>
+                }
+            </tbody>
+        
+        </table>    
+
+    </div>
+
+
+
+    
+</ng-container>

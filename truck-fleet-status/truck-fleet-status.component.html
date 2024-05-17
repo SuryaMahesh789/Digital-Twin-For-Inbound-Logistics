@@ -1,0 +1,66 @@
+<p>Truck Fleet Status</p>
+
+<div id="table">
+    <table id="mainTable">
+        <tr>
+            <th colspan="3" class="rucha">Rucha</th>
+            <th colspan="3" class="rajsriya">Rajsriya</th>
+            <th colspan="3" class="metal-man">Metal Man</th>
+            <th colspan="3" class="sandhar">Sandhar</th>
+        </tr>
+        <tr>
+            <td class="delivered">Delivered</td>
+            <td class="idle">Idle</td>
+            <td class="shipment">Ready For Shipment</td>
+            <td class="delivered">Delivered</td>
+            <td class="idle">Idle</td>
+            <td class="shipment">Ready For Shipment</td>
+            <td class="delivered">Delivered</td>
+            <td class="idle">Idle</td>
+            <td class="shipment">Ready For Shipment</td>
+            <td class="delivered">Delivered</td>
+            <td class="idle">Idle</td>
+            <td class="shipment">Ready For Shipment</td>
+        </tr>
+        <tr class="values">
+            <td >20</td>
+            <td >30</td>
+            <td >10</td>
+            <td >19</td>
+            <td >13</td>
+            <td >18</td>
+            <td >15</td>
+            <td >22</td>
+            <td >18</td>
+            <td >15</td>
+            <td >23</td>
+            <td >5</td>
+        </tr>
+        
+
+    </table>
+    
+</div>
+
+<div id="p1">
+<p>Rucha</p>
+<canvas baseChart [type]="'doughnut'" [data]="data1"></canvas>
+</div>
+
+<div id="p2">
+    <p>Rajsriya</p>
+    <canvas baseChart [type]="'doughnut'" [data]="data2"></canvas>
+</div>
+
+<div id="p3">
+    <p>Metalman</p>
+    <canvas baseChart [type]="'doughnut'" [data]="data3"></canvas>
+</div>
+
+<div id="p4">
+    <p>Sandhar</p>
+    <canvas baseChart [type]="'doughnut'" [data]="data4"></canvas>
+</div>
+
+
+
