@@ -1,0 +1,407 @@
+angular.json
+------------
+
+prefix:""
+serve:
+below builders 
+options:{
+    port:4201;
+}
+
+
+icons- font 
+-------------
+
+
+google icons 
+ Symbols & Icons
+
+link rel sheet to index.html 
+css to global style.scss 
+html to app.component.html 
+
+
+
+----------------------------------------------------------------------
+
+
+array declaration and for loop element 
+
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  repeatCount = new Array(27); // Array with 27 elements
+}
+
+
+<h1 *ngFor="let i of repeatCount">Hello World</h1>
+
+<h1 *ngFor="let i of arr">Main Content</h1>
+
+<h1 *ngFor="let i of [1]">Hello World</h1>
+
+----------------------------------------------------------------------
+
+
+no need of any horizontal scroll bar 
+
+main{
+    padding:1rem;
+
+    // overflow will be scrolled under the page header 
+    overflow-y: auto;
+
+    // main content starts after the page header 
+    height:calc(100vh - 60px);
+
+}
+
+
+
+----------------------------------------------------------------------
+In CSS within an Angular component, `:host` is used to style the element that hosts the component itself.
+
+In CSS, the `:host` pseudo-class is used in the context of Angular to style the host element of a component from within the component's CSS file. The `:host` selector targets the element that hosts the Angular component in the parent HTML.
+
+Here's how it works:
+
+```css
+:host {
+  /* CSS styles applied to the host element */
+}
+```
+
+For example, if you have a component called `app-example`, and you want to style the element that hosts this component, you would use `:host` in the component's CSS file:
+
+```css
+:host {
+  display: block;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+```
+
+This CSS will be applied to the host element of the `app-example` component whenever it is used in a parent HTML template. The `:host` selector allows you to encapsulate styles within Angular components, making it easier to manage component-specific styles and avoid style conflicts with other elements in the application.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+declare amd use the variable 
+
+
+    // declare some variable
+    --tvs-red:rgba(250, 4, 4,0.75);
+
+    
+    background-color:var(--tvs-red);
+
+----------------------------------------------------------------------
+
+
+css technique 
+
+
+span{
+    height:50px;
+    width:50px;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items: center;
+
+    font-size:2rem;
+    border-radius: 50%;
+
+    padding:10px;
+    margin:10px;
+
+    &:hover{
+       cursor: pointer;
+    background-color:var(--tvs-red);
+    }
+}
+
+is same as
+
+span{
+    height:50px;
+    width:50px;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items: center;
+
+    font-size:2rem;
+    border-radius: 50%;
+
+    padding:10px;
+    margin:10px;
+
+}
+
+span:hover{
+    cursor: pointer;
+    background-color:var(--tvs-red);
+
+}
+
+
+----------------------------------------------------------------------
+
+for loop 
+
+.ts file
+---------
+
+export class SideNavComponent {
+items:{icon:string;title:string;link:string}[]=[
+  
+  { icon:'bar_chart',title:'Plant Level KPIs',link:'Plant Level KPIs'},
+  { icon:'local_shipping',title:'Logistics',link:'Logistics'},
+  { icon:'warehouse',title:'Plant Layout',link:'Plant Layout'},
+  { icon:'source_environment',title:'Critical Suppliers',link:'Critical Suppliers'}
+];
+}
+
+.html file 
+----------
+
+<ul>
+        @for (item of items;track items){
+            <li>
+                <span class="material-symbols-outlined icon">
+                    {{item.icon}}
+                    </span>
+                    <span class="data">
+                        {{item.title}}                   
+                    </span>
+            </li>
+        }
+        
+    </ul>
+
+
+
+----------------------------------------------------------------------
+Neumorphism.io for CSS Styling
+
+get the design copy paste in CSS file
+----------------------------------------------------------------------
+ 
+ Routes 
+
+ component.ts include RouterModule 
+ component.html direct the link using routerLink 
+ app.routes.ts 
+
+
+ export const routes: Routes = [
+    {path:'dashboard',component:DashboardComponent},
+    {path:'logistics',component:LogisticsComponent},
+    {path:'plantlayout',component:PlantLayoutComponent},
+    {path:'criticalsuppliers',component:CriticalSuppliersComponent},
+    
+    {path:'**',component:PageNotFoundComponent}
+];
+
+
+----------------------------------------------------------------------
+
+prob:
+-------
+
+<h2 id="menu" class="flat" routerLink="hey">Admin Panel</h2>
+this is woring
+and 
+<li [routerLink]="item.link">
+                hello
+            </li>
+this is also working
+ but below one
+<li routerLink="item.link">
+                hello
+            </li>
+
+not working why?
+
+
+sol:
+-----
+
+The reason why the third snippet `<li routerLink="item.link">` is not working is because it is using string interpolation incorrectly.
+
+In Angular, when you use string interpolation `routerLink="item.link"`, it treats `"item.link"` as a literal string value, not as a reference to the `item.link` variable. As a result, the `routerLink` directive will be set to the string `"item.link"` instead of evaluating the value of `item.link`.
+
+To fix this issue, you should use property binding `[routerLink]="item.link"` instead of string interpolation. Property binding binds the value of `item.link` to the `routerLink` directive, allowing you to dynamically set the `routerLink` based on the value of `item.link`.
+
+So, the correct approach is to use the second snippet `<li [routerLink]="item.link">`. This will dynamically set the `routerLink` based on the value of `item.link` and make the link work as expected.
+
+
+sol:
+-----
+The correct way to dynamically set the `routerLink` directive in Angular is by using property binding `[routerLink]="item.link"`. This allows you to bind the value of `item.link` to the `routerLink` directive and dynamically set the link based on the value of `item.link`. Using string interpolation `routerLink="item.link"` will treat `"item.link"` as a static string value, resulting in incorrect behavior.
+
+----------------------------------------------------------------------
+
+ make the active routerLink  - to be selected
+
+----------------------------------------------------------------------
+
+for loop 
+@for (item of arr;track arr){
+    <p>1234</p>
+}
+
+<h1 *ngFor="let i of arr">Main Content</h1> 
+
+<h1 *ngFor="let i of [1]">Hello World</h1>
+
+----------------------------------------------------------------------
+
+Charts - ng2charts - angular charts 
+
+
+
+https://github.com/valor-software/ng2-charts
+
+
+
+----------------------------------------------------------------------
+
+for ng2-charts 
+
+update the app.config.ts 
+------------------------
+
+
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes),provideCharts(withDefaultRegisterables())]
+};
+
+// providers: [provideCharts(withDefaultRegisterables())]
+
+update main.ts 
+---------------
+
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
+
+
+
+
+----------------------------------------------------------------------
+
+main.ts - app.config.ts changes 
+
+
+https://stackoverflow.com/questions/77539848/best-practice-for-main-ts-bootstrap-call-in-angular-17-standalone-configuration
+
+
+----------------------------------------------------------------------
+
+calling functions in HTML file
+
+<table>
+    <tr>
+        <td>Actual TAT</td>
+        <td>{{getTotalActualTAT()}} Hrs</td>
+    </tr>
+    <tr>
+        <td>Expected TAT</td>
+        <td>{{getTotalExpectedTAT()}} Hrs</td>
+    </tr>
+</table>
+
+----------------------------------------------------------------------
+chart.js - guide
+
+https://www.chartjs.org/docs/latest/
+
+
+
+----------------------------------------------------------------------
+css  technique to have elements inside the div 
+
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+
+
+
+----------------------------------------------------------------------
+text direction to vertical 
+
+.vertical-text {
+    writing-mode: vertical-rl; /* Vertical text from right to left */
+}
+
+
+----------------------------------------------------------------------
+
+navbar fixed - rest content scrollbar
+
+app-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure the navbar appears above other content */
+  }
+
+app-dashboard {
+    margin-top: 70px; /* Adjust as needed based on the height of your navbar */
+  }
+----------------------------------------------------------------------
+
+
+@if syntax in angular 17 (https://blog.angular-university.io/angular-if/)
+
+youtube - https://youtu.be/X3R_NfUD_c4?si=pr5wPQUTU_8j3vJk
+
+html--
+
+@if(isNavbarVisible())
+{
+    <app-navbar>
+
+    </app-navbar>
+}
+
+
+ts--
+
+isNavbarVisible()
+{
+
+return window.location.pathname !== '/';
+
+}
+
+
+----------------------------------------------------------------------
+
+get the current route for angular version 17
+
+https://www.bacancytechnology.com/qanda/angular/how-to-get-current-route-in-angular-js
+
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
