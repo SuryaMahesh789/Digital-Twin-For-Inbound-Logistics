@@ -1,0 +1,164 @@
+<header>
+
+<!-- ANALYSIS TYPE NAV BAR  -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-sm-1 col-1">
+
+      <!-- menu bar selection with menu icon according to routes  -->
+      @if(isHome())
+      {
+          <!-- eat five star do nothing  -->
+      }
+      @else{
+        
+        <div class="menu-icon" (click)="openMenu()">
+          <i class="{{menu_icon}}"></i>
+        </div>
+
+        @if(isHosur()){
+          <div class="desktop-menu" [class.menu]="menuValue">
+            <ul>
+              <li (click)="closeMenu()"  [routerLink]="Plant_Layout" routerLinkActive="active">Plant Layout</li>
+            </ul>
+          </div>
+        }
+        @else if(isPlantLayout())
+        {
+          <!-- do nothing eat five star -->
+        }
+        @else if(store_id===undefined){
+          <!-- do nothing eat five star -->
+        }
+        @else{
+          <div class="desktop-menu" [class.menu]="menuValue">
+            <ul>
+              <li (click)="closeMenu()" [routerLink]="Plant_Level_KPI">Plant KPI</li>
+              <li (click)="closeMenu()"  [routerLink]="Logistics">Logistics</li>
+              <li (click)="closeMenu()"  [routerLink]="Store_layout">Store Layout</li>
+              <li (click)="closeMenu()"  [routerLink]="Critical_Suppliers">Crtical Parts</li>
+            </ul>
+          </div>
+        }
+
+      }
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-3">
+      <div class="logo-container">
+        <img src="assets/tvs_logo.png" alt="" class="logo">
+      </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-8 display-text">
+      @if(getRoute()==='/'){
+       <h2>TVS Motor Company</h2>
+      }
+      @else if(getRoute()==='/home'){
+        <h2>Digital Twin</h2>
+       }
+      @else if(getRoute()==='/hosur'){
+        <h2>2 Wheeler Plant - Hosur</h2>
+       }
+       @else if(getRoute()==='/hosur/plant1'){
+        <h2>Plant 1 - Hosur</h2>
+       }
+      @else if(getRoute()==='/hosur/plant2'){
+        <h2>Plant 2 - Hosur</h2>
+       }
+      @else if(getRoute()==='/hosur/plant3'){
+        <h2>Plant 3 - Hosur</h2>
+       }
+      @else if(getRoute()==='/hosur/plant1/store101'){
+        <h2>Plant 1 - Vehicle Store</h2>
+       }
+       @else if(getRoute()==='/hosur/plant1/store102'){
+        <h2>Plant 1 - Engine Store</h2>
+       }
+       @else if(getRoute()==='/hosur/plant1/store103'){
+        <h2>Plant 1 - Plastic Store</h2>
+       }
+       @else if(getRoute()==='/hosur/plant2/store201'){
+        <h2>Plant 2 - Vehicle Store 1</h2>
+       }
+       @else if(getRoute()==='/hosur/plant2/store202'){
+        <h2>Plant 2 - Vehicle Store 2</h2>
+       }
+       @else if(getRoute()==='/hosur/plant2/store203'){
+        <h2>Plant 2 - CKD Store 1</h2>
+       }
+       @else if(getRoute()==='/hosur/plant2/store204'){
+        <h2>Plant 2 - CKD Store 2</h2>
+       }
+       @else if(getRoute()==='/hosur/plant2/store205'){
+        <h2>Plant 2 - Frame & Paint Store</h2>
+       }
+       @else if(getRoute()==='/hosur/plant2/store206'){
+        <h2>Plant 2 - Engine Store</h2>
+       }
+       @else if(getRoute()==='/hosur/plant3/store301')
+       {
+        <h2>Plant 3 - EV Store</h2>
+       }@else if(getRoute()==='/dashboard')
+       {
+        <h2>Plant Level KPI's</h2>
+       }@else if(getRoute()==='/logistics')
+       {
+        <h2>Plant Logistics</h2>
+       }@else if(getRoute()==='/storelayout')
+       {
+        <h2>Store Layout</h2>
+       }
+       @else if(getRoute()==='/criticalsuppliers')
+       {
+        <h2>Critical Suppliers</h2>
+       }
+       @else if(getRoute()==='/plantlayout')
+       {
+        <h2>Plant Layout</h2>
+       }
+       @else if(getRoute()==='/hosur/plant1/stock_in_stores'){
+        <h2>Plant 1 - Stock Availability</h2>
+       }
+      @else if(getRoute()==='/hosur/plant2/stock_in_stores'){
+        <h2>Plant 2 - Stock Availability</h2>
+       }
+      @else if(getRoute()==='/hosur/plant3/stock_in_stores'){
+        <h2>Plant 3 - Stock Availability</h2>
+       }
+      
+    </div>
+
+
+  </div>
+</div>
+
+      <!-- DROP DOWN MENU display according to routes  -->
+      @if(isHome())
+      {
+        <!-- eat five star do nothing  -->
+      }
+      @else {
+        <!-- dropdown menu new  -->
+      <form [formGroup]="dropDownForm" class="selection">
+        <div class="drop-down-container">
+          <select formControlName="plant" >
+            <option value="---- SELECT PLANT ----" selected>---- SELECT PLANT ----</option>
+            @for (plant of list; track plant) {
+              <option [ngValue]="plant.id">{{plant.name}} </option>
+            }
+          </select>
+
+          <select formControlName="store">
+            <option value="---- SELECT STORE ----" selected>---- SELECT STORE ----</option>
+            @for (store of selectedStores; track store) {
+              <option [ngValue]="store.id">{{store.name}}</option>
+            }
+          </select>
+        </div>
+      </form>
+      }
+
+
+</header>
+

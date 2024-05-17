@@ -1,0 +1,163 @@
+
+header{
+    padding: 10px;
+    /* background: whitesmoke; */
+    background:rgb(57, 57, 245);
+    height: 60px;
+    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.display-text{
+    margin-top:10px;
+    color:white;
+}
+
+
+.logo{
+    width: 90px;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.desktop-menu{
+    position: fixed;
+    left:-280px;
+    width:280px;
+    height:100%;
+    background: whitesmoke;
+    transition: 0.4s ease-in-out;
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+    z-index: 2;
+}
+
+/* Hide the scrollbar for WebKit browsers */
+
+.desktop-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.desktop-menu ul{
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-menu ul li{
+    list-style-type: none;
+    display: block;
+    text-align: left;
+    margin:0;
+    padding: 20px 0 10px 26px;
+    font-size: 18px;
+}
+
+.desktop-menu ul li:hover{
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    
+}
+
+.desktop-menu ul .nested-menu {
+    display: none;
+    padding-left: 20px;
+}
+
+.desktop-menu ul li:hover > .nested-menu {
+    display: block;
+}
+
+.desktop-menu ul .nested-menu li:hover {
+    cursor: pointer;
+}
+
+.menu-icon{
+    display: block;
+    color: black;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.menu{
+    left:0px;
+    transition: 0.4s ease-in-out;
+}
+
+
+
+/* analysis selction button group  */
+
+
+.button-group, .button-container {
+    display: flex;
+    justify-content: end;
+    margin: 10px 0;
+}
+ 
+.button {
+   
+    padding: 10px 20px;
+    background-color:blue;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+ 
+.button:first-child {
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
+}
+ 
+.button:last-child {
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
+}
+ 
+.button:hover {
+    background-color:orange;
+}
+ 
+.button:active {
+    background-color:black;
+}
+ 
+
+
+
+
+
+form {
+    div {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+ 
+    select {
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 10px;
+    }
+ 
+    option {
+        font-size: 16px;
+    }
+}
+
+
+
+
+.text-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
