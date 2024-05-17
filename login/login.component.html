@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="slides">
+        <div class="slide" [ngStyle]="{'background-image': 'url('+slides[currentSlide].url+')', opacity: hidden?0:1}">
+            <div id="indicators">
+                @for(slide of slides; track $index){
+                <div (click)="jumpToSlide($index)" class="indicator" [ngClass]="{active:$index==currentSlide}"></div>
+                }
+            </div>
+        </div>
+        <button (click)="next()" class="nextButton"><fa-icon [icon]="right"></fa-icon></button>
+        <button (click)="prev()" class="prevButton"><fa-icon [icon]="left"></fa-icon></button>
+    </div>
+
+    <div id="login">
+        <div class="header-card">
+            <h2>Login</h2>
+        </div>
+
+        <div class="content-card">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter your Username" />
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" />
+
+            <input id="button" type="submit" value="Submit" [routerLink]="home">
+        </div>
+
+        <div class="footer-card">
+            <a href="#">Forgot your password ?</a>
+        </div>
+    </div>
+</div>
