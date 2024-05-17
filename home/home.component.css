@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    gap: 1rem;
+
+
+    #plantList
+    {
+        border: 1px solid black;
+        width: 342px;
+        height: 400px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        h2{
+            margin-bottom: 10px;
+            color: #333;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .logo {
+            width: 175px;
+        }
+
+        .logo:hover {
+            cursor: pointer;
+        }
+    }
+
+    #plantList button {
+        margin-top: 10px;
+        background-color: rgb(100, 99, 99);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width:250px;
+        height:45px;
+    }
+
+    #plantList button:hover{
+        background-color: green;
+    }
+
+    .slides {
+        width: 1000px;
+        height: 400px;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 40px;
+            position: relative;
+            transition: opacity 0.2s ease-in-out;
+
+        }
+
+        .nextButton,
+        .prevButton {
+            position: absolute;
+            top: 50%;
+            border: 0px;
+            background-color: transparent;
+            font-size: 20px;
+            color: whitesmoke;
+        }
+
+        .nextButton {
+            right: 0px;
+        }
+
+        .prevButton {
+            left: 0px;
+        }
+
+        #indicators {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            bottom: 20px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .indicator {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: white;
+                display: inline-block;
+                margin: 0px 5px;
+                cursor: pointer;
+                transition: background-color 0.5s ease-in-out;
+
+                &.active {
+                    background-color: rgb(95, 95, 95);
+                }
+            }
+        }
+    }
+
+}

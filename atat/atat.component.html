@@ -1,0 +1,14 @@
+<p>Average Truck Turn Aroud Time</p>
+
+<table>
+    <tr>
+        <td>Actual</td>
+        <td>{{getTotalActualATAT()}} Hrs</td>
+    </tr>
+    <tr>
+        <td>Expected</td>
+        <td>{{getTotalExpectedATAT()}} Hrs</td>
+    </tr>
+</table>
+
+<canvas baseChart [type]="'bar'" [data]="data"></canvas>

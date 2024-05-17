@@ -1,0 +1,76 @@
+
+:host{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+
+    align-items: center;
+    justify-content: center;
+
+    gap:1.5rem 1rem;
+}
+
+
+app-jit{
+    grid-column:1/3;
+    grid-row:1/3;
+    grid-row-end:span 1;
+    grid-column-end: span 1;
+
+    
+    border:2px solid black;
+
+
+    border-radius: 0.5rem;
+    padding:1rem;
+
+    margin-top: 1rem;
+      
+ }
+
+ app-kpi{
+    grid-column:2/3;
+    grid-row:1/3;
+    grid-row-end:span 1;
+    
+    
+    
+    border:2px solid black;
+
+    border-radius: 0.5rem;
+    padding:1rem;
+
+    
+    margin-top: 1rem;
+
+      
+ }
+
+ app-stock-availability{
+    grid-column:1/3;
+    grid-row:2/3;
+    grid-row-end:span 1;
+    grid-column-end: span 1;
+
+
+        border:2px solid black;
+
+    border-radius: 0.5rem;
+    padding:1rem
+
+ }
+
+ app-on-time-delivery{
+    grid-column:2/3;
+    grid-row:2/3;
+    grid-column-end:span 1;    
+    grid-row-end:span 1;
+
+
+    
+    border:2px solid black;
+
+    border-radius: 0.5rem;
+    padding:1rem;
+ }
+
