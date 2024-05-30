@@ -26,6 +26,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## frontend
+
+![image](https://github.com/SuryaMahesh789/Digital-Twin-For-Inbound-Logistics/assets/101471548/b61f334c-b679-45ed-bc64-e298a6494652)
+![image](https://github.com/SuryaMahesh789/Digital-Twin-For-Inbound-Logistics/assets/101471548/791af40e-6dc7-436b-adac-04b0af78df42)
+![image](https://github.com/SuryaMahesh789/Digital-Twin-For-Inbound-Logistics/assets/101471548/e5c161d5-4d6e-4b53-a965-ee9920966500)
+![image](https://github.com/SuryaMahesh789/Digital-Twin-For-Inbound-Logistics/assets/101471548/f7d765b2-3abb-413a-ac5e-2662d5a256b0)
+![image](https://github.com/SuryaMahesh789/Digital-Twin-For-Inbound-Logistics/assets/101471548/bcf64f15-369d-4c3b-b9ab-4113a4feab18)
+
+
 
 ## Design
 ![image](https://github.com/SuryaMahesh789/Digital-Twin-For-Inbound-Logistics/assets/101471548/afb1ed26-70a5-4cf6-a896-af4e38c06ed6)
